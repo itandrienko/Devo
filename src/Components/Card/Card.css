@@ -1,0 +1,44 @@
+.card {
+    background-color: var(--color-window);
+    border: 1px solid var(--color-primary);
+    width: 100%;
+    min-height: 300px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px var(--color-primary);
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 100px;
+}
+
+.card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card__category {
+    padding: 7px 50px;
+    border: 1px solid var(--color-primary);
+    border-radius: 5px;
+    cursor: default;
+}
+
+.card-button-copy {
+    padding: 7px 15px;
+    font-size: 15px;
+}
+
+.card__description {
+    max-width: 1000px;
+    padding: 50px 50px;
+    line-height: 35px;
+    margin-bottom: 50px;
+}
+
+.card__button-position {
+    display: block;
+    margin-left: auto;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    font-size: 23px;
+}

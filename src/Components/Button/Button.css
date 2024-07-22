@@ -1,0 +1,25 @@
+.app-button {
+    padding: 7px 15px;
+    font-size: 25px;
+    border: 1px solid var(--color-primary);
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px var(--color-primary);
+    cursor: pointer;
+}
+
+.app-button:hover {
+    background-color: var(--color-primary);
+    color: var(--color-window);
+}
+
+.app-button:active {
+    border: 1px solid var(--color-window);
+}
+
+.header__search-button {
+    margin-left: 8px;
+}
+
+.header__user-button {
+    padding: 10px 25px;
+}
