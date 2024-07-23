@@ -2,7 +2,7 @@ import React, {FC} from "react";
 import "./Button.css"
 
 interface Props {
-    children: any;
+    children: React.ReactNode;
     className?: string;
     onClicked?: () => void | boolean;
 }

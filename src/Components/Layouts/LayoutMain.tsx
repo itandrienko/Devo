@@ -1,7 +1,7 @@
 import React, {FC} from "react";
 
 interface Props {
-    children: any;
+    children: React.ReactNode;
 }
 
 export const LayoutMain: FC<Props> = ({children}) => {
