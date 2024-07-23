@@ -4,7 +4,7 @@ import "./Button.css"
 interface Props {
     children: any;
     className?: string;
-    onClicked?: () => void;
+    onClicked?: () => void | boolean;
 }
 
 export const Button: FC<Props> = ({children, className, onClicked}) => {

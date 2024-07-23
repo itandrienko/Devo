@@ -6,13 +6,10 @@ interface Props {
     id: number,
     lang: string,
     description: string,
-    onClicked?: boolean;
 }
 
-export const Card:FC<Props> = ({id, description, lang, onClicked}) => {
+export const Card:FC<Props> = ({id, description, lang}) => {
     const [copyClicked, setCopyClicked] = React.useState(false);
-    const [onClickedOpen, setOnClickedOpen] = React.useState(false);
-    const stringId = id.toString();
 
     React.useEffect(()=>{
         if(copyClicked === true){
@@ -23,18 +20,14 @@ export const Card:FC<Props> = ({id, description, lang, onClicked}) => {
     }, [copyClicked]);
 
     const onClickCopy = () => {
-        navigator.clipboard.writeText(stringId)
+        navigator.clipboard.writeText(id.toString())
             .then(() => {
                 setCopyClicked(true);
-                console.log("Copied " + stringId);
+                console.log("Copied " + id.toString());
             })
             .catch(err => {
                 console.log('Copied error', err);
             });
-    }
-
-    const onClickedEvent = () => {
-        setOnClickedOpen(true);
     }
 
     return (
@@ -55,7 +48,7 @@ export const Card:FC<Props> = ({id, description, lang, onClicked}) => {
                 <span className="card__category">{lang}</span>
             </div>
             <p className="card__description">{description}</p>
-            <Button onClicked={onClickedEvent} className="app-button card__button-position">Открыть</Button>
+            <Button className="app-button card__button-position">Открыть</Button>
         </div>
     )
 }

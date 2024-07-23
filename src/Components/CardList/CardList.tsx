@@ -2,9 +2,7 @@ import React from "react";
 import {cardsapi} from "../../cardsapi";
 import {Card} from "../Card/Card";
 
-
-
-export const CardList = ({}) => {
+export const CardList = () => {
     return (
         <div className="card__list">
             {cardsapi.data.map((item) => {
