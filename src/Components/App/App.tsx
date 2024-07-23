@@ -1,20 +1,15 @@
 import React from 'react';
-import {LayoutHeader} from "../Layout/LayoutHeader";
-import {InputSearch} from "../InputSearch/InputSearch";
-import {UserContainer} from "../UserContainer/UserContainer";
-import {LayoutMain} from "../Layout/LayoutMain";
-import {CardList} from "../CardList/CardList"
+import {Route, Routes} from 'react-router-dom';
+import {MainPage} from "../Pages/MainPage/MainPage";
+import {CardPage} from "../Pages/CardPage/CardPage";
 
 export function App() {
     return (
       <>
-          <LayoutHeader>
-              <InputSearch/>
-              <UserContainer/>
-          </LayoutHeader>
-          <LayoutMain>
-              <CardList/>
-          </LayoutMain>
+          <Routes>
+              <Route path="/" element={<MainPage/>}></Route>
+              <Route path="card/:id" element={<CardPage/>}></Route>
+          </Routes>
       </>
   );
 }

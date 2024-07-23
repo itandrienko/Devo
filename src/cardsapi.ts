@@ -1,6 +1,6 @@
 import {getRandomInt, getRandomLang} from './util'
 
-export const cardsapi = {
+export let cardsapi = {
     "data": [
         {
             "id": getRandomInt(0, 10000000),
@@ -48,4 +48,8 @@ export const cardsapi = {
             "description": "Список – последовательность элементов, объединенных в один контейнер. Главная особенность – они изменяемы. Элементы списка индексируются, состоят в основном из однотипных данных, перебираются, сохраняют порядок. Для решения заданий необходимо повторить свойства и методы списков ..."
         }
     ]
+}
+
+export const delCard = (id: number) => {
+    cardsapi.data = cardsapi.data.filter(item => item.id !== id);
 }

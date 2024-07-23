@@ -1,6 +1,7 @@
 import React, {FC} from "react";
 import {Button} from "../Button/Button";
 import "./Card.css"
+import {Link} from "react-router-dom";
 
 interface Props {
     id: number,
@@ -10,6 +11,9 @@ interface Props {
 
 export const Card:FC<Props> = ({id, description, lang}) => {
     const [copyClicked, setCopyClicked] = React.useState(false);
+    const [cardId, setCardId] = React.useState(0);
+    const [cardLang, setCardLang] = React.useState('');
+    const [cardDescription, setCardDescription] = React.useState('');
 
     React.useEffect(()=>{
         if(copyClicked === true){
@@ -30,6 +34,18 @@ export const Card:FC<Props> = ({id, description, lang}) => {
             });
     }
 
+    const onClickOpen = () => {
+        setCardId(id)
+        setCardLang(lang)
+        setCardDescription(description)
+
+        console.log(cardId, cardLang, cardDescription);
+    }
+
+    React.useEffect(()=>{
+        onClickOpen()
+    }, [])
+
     return (
         <div className="card">
             <div className="card__header">
@@ -48,7 +64,9 @@ export const Card:FC<Props> = ({id, description, lang}) => {
                 <span className="card__category">{lang}</span>
             </div>
             <p className="card__description">{description}</p>
-            <Button className="app-button card__button-position">Открыть</Button>
+            <Link to={`/card/${cardId}`} state={{cardId, cardLang, cardDescription}}>
+                <Button onClicked={onClickOpen} className="app-button card__button-position">Открыть</Button>
+            </Link>
         </div>
     )
 }
